@@ -1,68 +1,293 @@
-h2,h3{
- margin : 0
+@font-face {
+  font-family: 'latoblack';
+  src: url('../fonts/lato-black-webfont.woff2') format('woff2'),
+       url('../fonts/lato-black-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
 }
+
+@font-face {
+  font-family: 'latoregular';
+  src: url('../fonts/lato-regular-webfont.woff2') format('woff2'),
+       url('../fonts/lato-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+*, * ::before,*::after{
+  box-sizing: border-box;
+}
+
+body{
+  margin : 0;
+}
+
+button{
+  font-family: 'latoblack';
+  font-size: 1rem;
+
+}
+
+h2{
+  margin : 0;
+  font-family: 'latoblack';
+  font-size: 2.1rem;
+ }
+
+h3{
+ margin : 0;
+ font-family: 'latoblack';
+ font-size: 1.7rem;
+}
+
+h4{
+  margin : 0;
+  font-family: 'latoblack';
+  font-size: 1.2rem;
+ }
 
 p{
   margin : 0;
-  font-size: 18px;
+  font-family:'latoregular' ;
+  font-size: 1rem;
 }
+
 
 .App{
   display : grid;
-  gap : 30px;
+  gap : 1rem;
 }
 .App-header{
   background-image: url('../assets/background-image@2x.png');
-  background-size: cover;
-  background-position: top;
-  top: 0px;
-  left: 0px;
+
+  background-repeat: no-repeat;
+  background-position: top top;
   width: 100%;
-  height: 80vh;
 
   opacity: 1;
+  
 }
+
+
+
+
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 300px) { 
+    
+  h2{
+    margin : 0;
+    font-family: 'latoblack';
+    font-size: 1.5rem;
+  }
+
+  h3{
+  margin : 0;
+  font-family: 'latoblack';
+  font-size: 1.2rem;
+  }
+
+  h4{
+    margin : 0;
+    font-family: 'latoblack';
+    font-size: 1rem;
+  }
+
+  p{
+    margin : 0;
+    font-family:'latoregular' ;
+    font-size: 1rem;
+  }
+  
+  .App-header{
+      padding-top:40%;
+    background-size: contain;
+    background-position: top;
+    
+  }
+
+  .header-form{
+    width : 80%;
+  }
+  .container{
+    display: grid;
+    gap : 1rem;
+  }
+  .values{
+    gap : 2rem;
+  }
+  .book{
+    padding : 2rem;
+    gap : 1rem;
+ }
+ .book-valuation{
+  gap : 1rem;
+}
+ .guides{
+    gap : 1.5rem;
+ }
+ [class^="guide-image-"]{
+    padding-top : 13rem;
+ }
+ 
+}
+/* 
+
+// Large devices (desktops, 992px and up) */
+@media (min-width: 920px) { 
+  h2{
+    margin : 0;
+    font-family: 'latoblack';
+    font-size: 1.7rem;
+   }
+  
+  h3{
+   margin : 0;
+   font-family: 'latoblack';
+   font-size: 1.4rem;
+  }
+  
+  h4{
+    margin : 0;
+    font-family: 'latoblack';
+    font-size: 1.2rem;
+   }
+  
+  p{
+    margin : 0;
+    font-family:'latoregular' ;
+    font-size: 1rem;
+  }
+
+.App-header{
+  background-size: cover;
+  background-position: center;
+  padding : 14% 18%;
+}
+
+.header-form{
+  width : 100%;
+  max-width: 60rem;
+  grid-template-columns: 1fr 1fr 1.3fr;
+}
+.header-form h2{
+  grid-column: span 3;
+}
+.header-form p{
+  grid-column: span 3;
+}
+.header-form input{
+  grid-column: span 2;
+}
+
+.header-form button{
+  grid-column:  span 1;
+}
+
+.container{
+  display: grid;
+  gap : 3rem;
+}
+.values{
+  display : grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+}
+.values h3{
+  grid-column: span 3;
+}
+
+.book{
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 2rem;
+  padding : 3.5rem;
+}
+.book-valuation{
+  grid-column: span 1;
+  gap : 1.5rem;
+}
+
+ .illustration{
+position: relative;
+  background-image: url("../assets/illustration.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  display: inline-block;
+  padding :5rem 0;
+  width: 100%;
+  grid-column: span 2;
+} 
+
+  .guides{
+    grid-template-columns: 1fr 1fr 1fr;
+    gap : 1.5rem;
+  }
+  .guides h3  {
+      grid-column: span 3;
+  } 
+  .guides p  {
+    grid-column: span 3;
+}
+[class^="guide-image-"]{
+  padding-top : 9rem;
+  width: 100%;
+}
+}
+
+
 
 .header-form {
   display: grid;
-  
-  gap : 20px;
-  grid-template-columns: repeat(3,1fr);
-  position : absolute;
-  top : 43%;
-  left: 50%;
-  transform: translate(-50%,-50%);
+  gap : 1rem;
+  margin : auto;
+  padding : 5% 8%;
   background-color: #FFFFFF;
-  padding : 50px;
   border-radius: 10px;
   box-shadow: 0px 0px 20px grey;
 }
 
 .header-form input{
-  padding : 13px;
-  border-radius: 5px;
+  padding : 0.9rem;
+  border-radius: 0.3rem;
   border: 1px solid #D5D5D5;
+  width : 100%
+
 }
 
 .header-form button{
   color: white;
+  font-size: 1rem;
   background: #2F6E49 0% 0% no-repeat padding-box;
-  
+  display: flex;
+  flex-direction: row;
+  gap : 0.5rem;
+  align-items: center;
+  justify-content: center;
   border : 0;
   border-radius: 5px;
+  padding : 0.7rem 2rem;
 }
 
 
-.arrow{
+
+.arrow-green{
   background-image: url("../assets/icon-arrow-2.svg");
   background-repeat: no-repeat;
   background-size: contain;
-  display: inline-block;
-  height: 15px;
-  width: 20px;
-  color : white;
 
-  
+  height: 12px;
+  width: 1.2rem;
+}
+
+.arrow-white{
+  background-image: url("../assets/icon-arrow.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 12px;
+  width: 1.2rem;
 }
 .col-span-1{
   grid-column : span 1;
@@ -77,19 +302,148 @@ p{
 
 .container{
   display: grid;
-  padding : 40px 200px;
-  gap : 30px;
+  padding : 3% 10%;
+
 }
 
 .values{
   display : grid;
-  gap : 30px;
-  grid-template-columns: repeat(3, 1fr);
+  
+}
+.value{
+  display : grid;
+  gap : 1rem;
 }
 
 .book{
   background: #2F6E49 0% 0% no-repeat padding-box;
-border-radius: 10px;
-opacity: 1;
-height : 40vh;
+  border-radius: 10px;
+  opacity: 1;
+  display: grid;
+
+  color : white;
+}
+
+.book-valuation{
+  display : grid;
+  margin : auto
+}
+
+.book-valuation ul{
+  list-style-type: none;
+  padding : 0;
+  margin : 0;
+  
+}
+
+.book-valuation li{
+  padding : 0.4rem 0;
+  display : flex;
+  flex-direction: row;
+  gap :0.5rem;
+
+}
+.book-valuation button{
+  background-color: white;
+  color : #2F6E49;
+  font-size :1rem;
+  padding : 0.7rem 2rem;
+  border : 0;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  
+  gap : 0.5rem;
+}
+
+
+
+.guides{
+  display: grid;
+}
+
+.guide{
+  display : grid;
+  padding : 1.4rem;
+  gap : 1rem;
+  background-color: rgba(47, 110, 73, 0.08);
+  border-radius: 10px;
+  color: black;
+  width: 100%;
+  max-width: 28rem;
+  margin : auto
+  }
+
+.guide button{
+  color :#2F6E49;
+  border : 0;
+  padding : 0;
+  padding-bottom: 0.3;
+  text-align: left;
+  font-size: 0.9rem !important;
+  text-decoration: underline #F5D248 0.1rem;
+  text-underline-offset: 0.3rem;
+}
+
+
+.guide-image-1{
+
+  background-image: url('../assets/guide-image-1.png');
+ 
+  
+}
+.guide-image-2{
+  background-image: url('../assets/guide-image-2.png');
+  
+}
+.guide-image-3{
+  background-image: url('../assets/guide-image-2.png');
+  
+
+}
+
+[class^="guide-image-"]{
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  place-items: center;
+  
+  width: 100%;
+}
+/* SVGS */
+.check{
+  background-image: url("../assets/icon-check.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  align-self: center;
+  width: 20px;
+  height: 1rem;
+}
+
+
+
+
+.icon-track{
+  background-image: url('../assets/icon-track.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 1.7rem;
+  min-width: 100%;
+}
+.icon-trends{
+  background-image: url('../assets/icon-trends.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 1rem;
+  align-self: center;
+  min-width: 100%;
+}
+.icon-report{
+  background-image: url('../assets/icon-report.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 1.7rem;
+  min-width: 100%;
 }
